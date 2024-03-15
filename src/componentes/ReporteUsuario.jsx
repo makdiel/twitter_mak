@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const urlBase = import.meta.env.MY_APP_URL;
-const endPoint = urlBase+'/Usuarios';
+//const urlBase = import.meta.env.MY_APP_URL;
+//const endPoint = urlBase+'/Usuarios';
+
+const endPoint = `http://localhost:4000/api/Usuarios`;
+
 
 export const ReporteUsuario = () => {
 
@@ -22,7 +25,7 @@ export const ReporteUsuario = () => {
 
     const editarUsuario = (usuario)=>{
 
-        const url = `/editarCrudUsuario/${usuario.nombre_usuario}`;
+        const url = `/EditarUsuario/${usuario.nombre_usuario}`;
         console.log(url);
 
         navigate(url);
@@ -56,8 +59,7 @@ export const ReporteUsuario = () => {
                     <th>Nombre Usuario</th>
                     <th>Correo</th>
                     <th>Contraseña</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Nombre</th>                    
                     <th>Rol</th>
                     <th>Activo</th>
                     <th>Acciones</th>
@@ -70,8 +72,7 @@ export const ReporteUsuario = () => {
                         <td>{item.nombre_usuario}</td>
                         <td>{item.correo_electronico}</td>
                         <td>{item.contrasena}</td>
-                        <td>{item.nombre}</td>
-                        <td>{item.apellido}</td>
+                        <td>{item.nombre}</td>                       
                         <td>{item.nombre_rol}</td>
                         <td>{ item.activo ? 'Si' : 'No' }</td>
                         <td> 

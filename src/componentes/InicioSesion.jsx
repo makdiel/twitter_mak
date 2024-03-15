@@ -22,18 +22,17 @@ export const InicioSesion = () => {
 
     const onRegistrarse = async () =>{
         navigate('/RegistroUsuarios');
-
     }
 
     const submitHandler = async () => {
         event.preventDefault();
 
-        const url = `http://localhost:4000/api/usuario/auth/${dataForm.nombre_usuario}/${dataForm.pass}`;
+        const url = `http://localhost:4000/api/Usuarios/auth/${dataForm.nombre_usuario}/${dataForm.pass}`;
 
         try {
             const result = await axios.get(url);
             const resultData = (await result).data;
-            navigate('/RegistroUsuarios');
+            navigate('/Muro');
         } catch (err) {
             setInicioSesion("Error de Inicio de Sesion");
         }

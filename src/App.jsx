@@ -3,10 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { InicioSesion } from './componentes/InicioSesion';
 import { Usuarios } from './componentes/Usuarios';
 import { RegistroUsuarios } from './componentes/RegistroUsuarios';
-//import { ReporteUsuario } from './componentes/ReporteUsuario';
-import reactLogo from './assets/react.svg'
-
-import './App.css'
+import { Muro } from './componentes/Muro';
+import reactLogo from './assets/react.svg';
+import './App.css';
 import { ReporteUsuario } from './componentes/ReporteUsuario';
 
 function App() {
@@ -19,10 +18,7 @@ function App() {
       </div>
       <h1>twitter mak</h1>
       <div className="card">
-        <p>          
-          <code>Esto es un ejercicio de la clase Desarrollo de aplicaciones web 1 </code>
-          <code>Ing. FERNANDO LOPEZ  by for Makdiel</code>
-        </p>
+       
       </div>
       
       <BrowserRouter>
@@ -31,6 +27,7 @@ function App() {
           <Route path='/Usuarios' element = {<Usuarios/>} />
           <Route path='/RegistroUsuarios' element = {< RegistroUsuarios/>} />
           <Route path='/ReporteUsuarios' element={<ReporteUsuario/>} ></Route>
+          <Route path='/Muro' element={<Muro/>}></Route>
         </Routes>
       </BrowserRouter> 
     </>
