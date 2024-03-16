@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react";
+import axios from "axios";
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 export const crearPublicacion = () => {
     const navigate = useNavigate();
@@ -26,10 +27,18 @@ export const crearPublicacion = () => {
         const url = `http://localhost:4000/api/publicacion`;
         
         try {
-            const result = await axios.post(url, dataForm);
+
+            const datosFormulario = new FormData();
+        
+            datosFormulario.append( "id" , form.id);
+            datosFormulario.append( "nombre_usuario" , form.nombre_usuario);
+            datosFormulario.append( "publicacion" , form.publicacion);
+    
+            const result = await axios.post(url, datosFormulario);
             //const result = await axios.get(url);
             const resultData = (await result).data;
             navigate(`/Muro`);
+            console.log(resultData);
         } catch (err) {
             console.log("Error de Inicio de Sesion");
         }
