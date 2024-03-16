@@ -32,12 +32,14 @@ export const InicioSesion = () => {
         try {
             const result = await axios.get(url);
             const resultData = (await result).data;
-            navigate('/Muro');
+            navigate(`/Muro`);
         } catch (err) {
             setInicioSesion("Error de Inicio de Sesion");
         }
 
     }
+
+
 
     return (
         <>

@@ -30,9 +30,10 @@ export const RegistroUsuarios = () => {
         const url = `http://localhost:4000/api/Usuarios`;
         const result = await axios.post(url, dataForm);
         const resultData = (await result).data;
-        navigate('/ReporteUsuario');
+        navigate('/Usuarios');
         console.log(resultData);
     }
+    
 
     return (
         <>
@@ -108,6 +109,7 @@ export const RegistroUsuarios = () => {
 
                         <button type="submit" className="btn btn-primary w-100">Crear Usuario</button>
                         <button type="submit" className="btn btn-primary w-100" onClick={onInicio}>Regresar al Inicio</button>
+
                     </fieldset>
                 </form>
             </div>

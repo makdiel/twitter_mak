@@ -7,6 +7,7 @@ import { Muro } from './componentes/Muro';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { ReporteUsuario } from './componentes/ReporteUsuario';
+import { crearPublicacion } from './componentes/crearPublicacion';
 
 function App() {
   return (    
@@ -16,11 +17,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>twitter mak</h1>
-      <div className="card">
-       
-      </div>
-      
+      <h1>twitter mak</h1>   
       <BrowserRouter>
         <Routes>
           <Route path='/' element= {<InicioSesion/>} />
@@ -28,6 +25,7 @@ function App() {
           <Route path='/RegistroUsuarios' element = {< RegistroUsuarios/>} />
           <Route path='/ReporteUsuarios' element={<ReporteUsuario/>} ></Route>
           <Route path='/Muro' element={<Muro/>}></Route>
+          <Route path='/crearPublicacion' element={<crearPublicacion/>}></Route>
         </Routes>
       </BrowserRouter> 
     </>
