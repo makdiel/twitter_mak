@@ -52,27 +52,24 @@ export const Publicaciones = () => {
 
                     <fieldset>
                         <legend>ingresar nuevas Publicaciones</legend>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Usuario:</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">                            
+                            <div className="col-sm-12">
+                                <input type='text' className="form-control" placeholder="usuario"
                                     name="nombre_usuario"
                                     onChange={handlerChange} />
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Publicacion:</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">                           
+                            <div className="col-sm-12">
+                                <input type='text' className="form-control" placeholder="Publicacion"
                                     name="publicacion"
                                     onChange={handlerChange}
                                 />
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">id</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">                           
+                            <div className="col-sm-8">
+                                <input type='text' className="form-control" placeholder="#-Publicacion"
                                     name="id"
                                     onChange={handlerChange}
                                 />

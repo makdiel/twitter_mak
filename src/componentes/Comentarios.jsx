@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useParams,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export const Comentario = () => {
+export const Comentarios = () => {
     const navigate = useNavigate();
-    const {publicacion_id} = useParams();
-
+    //const {publicacion_id} = useParams();
     const [dataForm, setDataForm] = useState({
         id: "",
         comentario: "",
-        nombre_usuario: ""
+        nombre_usuario: "",
+        publicacion_id: ""
 
     });
 
@@ -26,7 +26,7 @@ export const Comentario = () => {
     const handlerSubmit = async () => {
         event.preventDefault();
         //const url = baseUrl + '/Usuarios';
-        const url = `http://localhost:4000/api/comentario/${publicacion_id}`;
+        const url = `http://localhost:4000/api/comentario`;
 
         try {
 
@@ -48,42 +48,38 @@ export const Comentario = () => {
 
                     <fieldset>
                         <legend>ingresar un nuevo comentario</legend>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">id</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">
+                            <div className="col-sm-8">
+                                <input type='text' className="form-control" placeholder="id-comentario" aria-label="id-comentario" aria-describedby="basic-addon1"
                                     name="id"
                                     onChange={handlerChange}
                                 />
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Usuario:</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">
+                            <div className="col-sm-8">
+                                <input type='text' className="form-control" placeholder="usuario" aria-label="nombre_usuario"
                                     name="nombre_usuario"
                                     onChange={handlerChange} />
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Comentario:</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">
+                            <div className="col-sm-12">
+                                <input type='text' className="form-control" placeholder="Comentario"
                                     name="comentario"
                                     onChange={handlerChange}
                                 />
                             </div>
                         </div>
-                        <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">id-Publicacion</label>
-                            <div className="col-sm-10">
-                                <input type='text' className="form-control-plaintext"
+                        <div className="input-group mb-3">
+                            <div className="col-sm-12">
+                                <input type='text' className="form-control" placeholder="#-Publicacion"
                                     name="publicacion_id"
                                     onChange={handlerChange}
                                 />
                             </div>
                         </div>
-                       
+
                         <button type="submit" className="btn btn-primary w-100">Crear comentario</button>
                         <button type="submit" className="btn btn-primary w-100" onClick={onInicio}>Regresar</button>
 

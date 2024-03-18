@@ -37,7 +37,8 @@ export const Muro = () => {
     }
 
     const crearComentario = (idPublcacion) => {
-        navigate(`/Comentarios/${idPublcacion}`);
+       // navigate(`/Comentarios/${idPublcacion}`);
+        navigate(`/Comentarios`);
     }
 
     const crearPostHandler = () => {

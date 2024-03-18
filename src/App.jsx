@@ -28,6 +28,7 @@ function App() {
           <Route path='/Muro' element={<Muro/>}></Route>
           <Route path='/Publicaciones' element={<Publicaciones/>}></Route>
           <Route path='/Comentarios' element={<Comentarios/>}></Route>
+         
         </Routes>
       </BrowserRouter> 
     </>
