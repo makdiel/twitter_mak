@@ -8,6 +8,7 @@ import reactLogo from './assets/react.svg';
 import './App.css';
 import { ReporteUsuario } from './componentes/ReporteUsuario';
 import { Publicaciones } from './componentes/Publicaciones';
+import { Comentarios } from './componentes/Comentarios';
 
 function App() {
   return (    
@@ -26,6 +27,7 @@ function App() {
           <Route path='/ReporteUsuarios' element={<ReporteUsuario/>} ></Route>
           <Route path='/Muro' element={<Muro/>}></Route>
           <Route path='/Publicaciones' element={<Publicaciones/>}></Route>
+          <Route path='/Comentarios' element={<Comentarios/>}></Route>
         </Routes>
       </BrowserRouter> 
     </>

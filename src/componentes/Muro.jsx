@@ -36,8 +36,8 @@ export const Muro = () => {
         console.log(contadorDeBorrar);
     }
 
-    const editarPublicacion = (idPublcacion) => {
-        navigate(`/editarPost/${idPublcacion}`);
+    const crearComentario = (idPublcacion) => {
+        navigate(`/Comentarios/${idPublcacion}`);
     }
 
     const crearPostHandler = () => {
@@ -69,13 +69,16 @@ export const Muro = () => {
                             <div className="card-header mb-2">
                                 <label for="date">Fecha Post:  {moment(item.fecha_post).format('DD/MM/YYYY')}</label>
                                <p>Post # {item.id} Posteado  por: {item.nombre_usuario}</p>
-                               <button onClick={() => borraPublicacion(item.id)} className="btn btn-danger mx-2">Borrar Publicacion</button>
+                               <p>Publicacion: <br></br>{item.publicacion} </p>
+                               <button onClick={() => borraPublicacion(item.id)} className="btn btn-outline-danger btn-sm">Borrar Publicacion</button>
+                               <button onClick={() => crearComentario(item.id)} className="btn btn-outline-success btn-sm">Comentar</button>
                             </div>
                             <div className="card-body">
                                 <blockquote className="blockquote mb-0">
-                                    <p>Publicaciones: <br></br>{item.publicacion} </p>
+                                    
                                     <footer className="blockquote-footer">Posteado Por: {item.user} / {item.id_c}  <br></br> Posteado el: {moment(item.post_com).format('DD/MM/YYYY')}  <cite title="Source Title"> <br></br> Comentario: <br></br> {item.comentario}</cite></footer>
-                                    <button onClick={() => borraComentario(item.id_c)} className="btn btn-danger mx-2">Borrar Comentario</button>                                 
+                                    <button onClick={() => borraComentario(item.id_c)} className="btn btn-outline-danger btn-sm">Borrar Comentario</button>
+                                                                    
                                 </blockquote>
                             </div>
 
