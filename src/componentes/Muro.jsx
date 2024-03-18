@@ -41,7 +41,7 @@ export const Muro = () => {
     }
 
     const crearPostHandler = () => {
-        navigate('/crearPublicacion');
+        navigate('/Publicaciones');
     }
     const iniciotHandler = () => {
         navigate('/');

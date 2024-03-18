@@ -7,7 +7,7 @@ import { Muro } from './componentes/Muro';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { ReporteUsuario } from './componentes/ReporteUsuario';
-import { crearPublicacion } from './componentes/crearPublicacion';
+import { Publicaciones } from './componentes/Publicaciones';
 
 function App() {
   return (    
@@ -21,11 +21,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element= {<InicioSesion/>} />
-          <Route path='/Usuarios' element = {<Usuarios/>} />
+          <Route path='/Usuarios' element = {<Usuarios/>} />xz
           <Route path='/RegistroUsuarios' element = {< RegistroUsuarios/>} />
           <Route path='/ReporteUsuarios' element={<ReporteUsuario/>} ></Route>
           <Route path='/Muro' element={<Muro/>}></Route>
-          <Route path='/crearPublicacion' element={<crearPublicacion/>}></Route>
+          <Route path='/Publicaciones' element={<Publicaciones/>}></Route>
         </Routes>
       </BrowserRouter> 
     </>
